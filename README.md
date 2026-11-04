@@ -12,6 +12,8 @@
 
 ``` uv sync ```
 
+## 1. What is Pydantic? {#1-what-is-pydantic}
+
 Pydantic is a Python library for validating, parsing, and serializing
 data using Python type annotations. You define the expected shape of
 data, then Pydantic checks incoming values and creates a validated
