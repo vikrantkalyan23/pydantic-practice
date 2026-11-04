@@ -5,7 +5,7 @@ In the Python ecosystem, Pydantic is primarily used for data validation, parsing
 ## What does Pydantic provide
 
 ``` 
-Feature	                    Purpose
+Feature	                        Purpose
 
 Type validation	            Validate string, integer, boolean, etc.
 Required fields	            Ensure mandatory fields exist
@@ -14,7 +14,7 @@ Custom validation	    Apply business-specific rules
 Nested models	            Validate complex JSON structures
 Serialization	            Convert objects into dictionaries or JSON
 Type conversion	            Convert compatible input types
-JSON Schema	                Generate schemas for API documentation
+JSON Schema	               Generate schemas for API documentation
 
 ```
 
