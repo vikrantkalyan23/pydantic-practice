@@ -175,7 +175,7 @@ class ProductCreate(BaseModel):
 
 ## 6. Pydantic alternatives in the Python ecosystem  
 
-### 6.1 Comparison overview {#61-comparison-overview}
+### 6.1 Comparison overview  
 
   Library         Main purpose                                                  Runtime validation                   Serialization                   JSON Schema Best suited for
   --------------- ---------------------------------------------- --------------------------------- ------------------------------- ----------------------------- -------------------------------------------------
