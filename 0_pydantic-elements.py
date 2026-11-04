@@ -24,3 +24,18 @@ Important Elements of Pydantic
 19	TypeAdapter	                    Validate arbitrary types
 20	BaseSettings	                Manage application settings
 """
+
+"""
+Installation 
+
+pip install pydantic
+
+or 
+
+uv add pydantic
+"""
+
+# Check version
+import pydantic
+
+print(pydantic.__version__)
