@@ -18,15 +18,15 @@ JSON Schema	            Generate schemas for API documentation
 
 ```
 
-# Initialization
+### Initialization
 
 ``` uv init ```
 
-# Install Dependencies
+### Install Dependencies
 
 ``` uv add fastapi uvicorn pydantic pydandic-settings python-dotenv ```
 
-# Install Existing Dependencies
+### Install Existing Dependencies
 
 ``` uv sync ```
 
