@@ -14,7 +14,7 @@ Custom validation	    Apply business-specific rules
 Nested models	            Validate complex JSON structures
 Serialization	            Convert objects into dictionaries or JSON
 Type conversion	            Convert compatible input types
-JSON Schema	              Generate schemas for API documentation
+JSON Schema	            Generate schemas for API documentation
 
 ```
 
