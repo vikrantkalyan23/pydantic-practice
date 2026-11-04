@@ -12,7 +12,7 @@
 
 ``` uv sync ```
 
-## 1. What is Pydantic? {#1-what-is-pydantic}
+## 1. What is Pydantic? 
 
 Pydantic is a Python library for validating, parsing, and serializing
 data using Python type annotations. You define the expected shape of
@@ -31,7 +31,7 @@ It is commonly used for:
 Pydantic v2 uses `pydantic-core` (implemented in Rust) for its core
 validation and serialization engine.
 
-## 2. Why do we need it? {#2-why-do-we-need-it}
+## 2. Why do we need it? 
 
 Python type hints alone are primarily for documentation, IDE support,
 and static analysis. They do not automatically validate values at
@@ -71,7 +71,7 @@ For inputs where implicit conversion is undesirable, configure strict
 validation, for example with `ConfigDict(strict=True)` or strict field
 types.
 
-## 3. Main features {#3-main-features}
+## 3. Main features 
 
   Feature               What it does                                           Example use
   --------------------- ------------------------------------------------------ -----------------------------
@@ -88,7 +88,7 @@ Pydantic validates data shape and declared constraints. It does **not**
 replace business logic, database constraints, authorization, or security
 checks.
 
-## 4. Pydantic with FastAPI {#4-pydantic-with-fastapi}
+## 4. Pydantic with FastAPI 
 
 FastAPI has first-class Pydantic integration. A request model documents
 the expected payload, validates the request, and makes the validated
@@ -140,7 +140,7 @@ Application/service logic
 Database or external service
 ```
 
-## 5. Important Pydantic v2 methods {#5-important-pydantic-v2-methods}
+## 5. Important Pydantic v2 methods 
 
   Method                             Purpose
   ---------------------------------- ----------------------------------------------------------
@@ -173,7 +173,7 @@ class ProductCreate(BaseModel):
         return value
 ```
 
-## 6. Pydantic alternatives in the Python ecosystem {#6-pydantic-alternatives-in-the-python-ecosystem}
+## 6. Pydantic alternatives in the Python ecosystem  
 
 ### 6.1 Comparison overview {#61-comparison-overview}
 
@@ -193,7 +193,7 @@ These tools overlap only partly. A runtime type checker such as
 Typeguard is not a full replacement for a data parsing and serialization
 library.
 
-### 6.2 Pydantic vs dataclasses {#62-pydantic-vs-dataclasses}
+### 6.2 Pydantic vs dataclasses  
 
 **Standard-library dataclasses** create convenient classes for storing
 structured data. They do not automatically validate annotations at
@@ -235,7 +235,7 @@ user = User(name="Asha", age="wrong")
 **Choose dataclasses** for trusted internal data structures. Choose
 Pydantic when data crosses a boundary you do not control.
 
-### 6.3 Pydantic vs attrs {#63-pydantic-vs-attrs}
+### 6.3 Pydantic vs attrs  
 
 `attrs` is a mature library for defining classes with less boilerplate.
 It supports converters, validators, and many class-modeling features.
@@ -266,7 +266,7 @@ class User:
 Choose Pydantic for API payloads, external data, and schema-driven
 validation.
 
-### 6.4 Pydantic vs msgspec {#64-pydantic-vs-msgspec}
+### 6.4 Pydantic vs msgspec  
 
 `msgspec` is a strong alternative when performance is especially
 important. It provides typed structures, validation, JSON
@@ -302,7 +302,7 @@ development and broad ecosystem compatibility.
 Do not assume one is always faster for your application: benchmark
 representative payloads and validation rules.
 
-### 6.5 Pydantic vs Marshmallow {#65-pydantic-vs-marshmallow}
+### 6.5 Pydantic vs Marshmallow  
 
 Marshmallow uses explicit schema classes to validate, deserialize, and
 serialize data.
@@ -331,7 +331,7 @@ result = schema.load({"name": "Asha", "age": 28})
 explicit schema definitions. For a new FastAPI project, Pydantic is
 usually simpler.
 
-### 6.6 Pydantic vs cattrs {#66-pydantic-vs-cattrs}
+### 6.6 Pydantic vs cattrs  
 
 `cattrs` converts unstructured data (such as dictionaries) into
 structured Python objects, commonly dataclasses or attrs classes, and
@@ -342,7 +342,7 @@ attrs and need reliable conversion. It is not a direct all-in-one
 substitute for Pydantic\'s validation, serialization, and JSON Schema
 workflow.
 
-### 6.7 Pydantic vs jsonschema {#67-pydantic-vs-jsonschema}
+### 6.7 Pydantic vs jsonschema  
 
 `jsonschema` validates a Python document against a JSON Schema document.
 
@@ -350,7 +350,7 @@ Use it when the schema itself comes from an external standard, partner,
 or configuration file. Use Pydantic when you want to define the schema
 naturally in Python and work with typed Python objects.
 
-### 6.8 Pydantic vs Typeguard / Beartype {#68-pydantic-vs-typeguard--beartype}
+### 6.8 Pydantic vs Typeguard / Beartype  
 
 Typeguard and Beartype check Python values against type annotations at
 runtime. They are useful for catching type violations in function calls
@@ -360,7 +360,7 @@ They are not designed to provide the same complete workflow as Pydantic
 for parsing untrusted JSON, converting values, serializing models, and
 generating API schemas.
 
-## 7. Which one should you choose? {#7-which-one-should-you-choose}
+## 7. Which one should you choose?  
 
   Your requirement                                 Recommended choice
   ------------------------------------------------ -------------------------
@@ -375,7 +375,7 @@ generating API schemas.
   Runtime type checking in tests                   Typeguard or Beartype
   Environment variables and application settings   `pydantic-settings`
 
-## 8. Recommended stack for a FastAPI backend {#8-recommended-stack-for-a-fastapi-backend}
+## 8. Recommended stack for a FastAPI backend  
 
 For a new backend, a practical combination is:
 
@@ -451,7 +451,7 @@ class UserResponse(BaseModel):
 
 Notice that the response schema does not expose the password.
 
-## 9. Advantages and disadvantages of Pydantic {#9-advantages-and-disadvantages-of-pydantic}
+## 9. Advantages and disadvantages of Pydantic  
 
 ### Advantages
 
@@ -472,7 +472,7 @@ Notice that the response schema does not expose the password.
 -   Pydantic models are not database ORM models.
 -   May be unnecessary for simple trusted internal objects.
 
-## 10. Final recommendation {#10-final-recommendation}
+## 10. Final recommendation  
 
 For a modern Python backend:
 
